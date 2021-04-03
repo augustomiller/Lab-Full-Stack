@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
-import Header from './components/Header';
+import React, { useState, useEffect } from 'react';
+import api from './services/api';
 
 import './App.css';
-import backgroundImage from './assets/background.jpeg';
+
+import Header from './components/Header';
 
 export default function App() {
 
@@ -11,7 +12,13 @@ export default function App() {
     * 1ª posicao: Variavel com seu valor inicial.
     * 2ª posicao: Funcao para atualizarmos esse valor.
     */
-    const [projects, setProjects] = useState(['Desenvolvimento de app', 'Front-end web']);
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        api.get('/projects').then(response => {
+            setProjects(response.data);
+        });
+    }, []);
 
     function handleAddProject() {
         /*
@@ -25,12 +32,10 @@ export default function App() {
         <>
             <Header title="Projects" />
 
-            <img width={300} src={backgroundImage} />
-
             <ul>
                 {projects.map(project => (
 
-                    <li key={project}>{project}</li>
+                    <li key={project.id}>{project.title}</li>
 
                 ))}
             </ul>
