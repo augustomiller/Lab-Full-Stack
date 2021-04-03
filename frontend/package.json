@@ -3,19 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-<<<<<<< HEAD
   "scripts": {
     "dev": "yarn webpack serve --mode development",
     "build": "webpack --mode production"
   },
-=======
->>>>>>> Front-End
   "dependencies": {
     "@babel/cli": "^7.13.10",
     "@babel/core": "^7.13.13",
     "@babel/preset-env": "^7.13.12",
     "@babel/preset-react": "^7.13.13",
-<<<<<<< HEAD
     "babel-loader": "^8.2.2",
     "css-loader": "^5.2.0",
     "file-loader": "^6.2.0",
@@ -27,11 +23,5 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3.11.2"
-=======
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "webpack": "^5.28.0",
-    "webpack-cli": "^4.6.0"
->>>>>>> Front-End
   }
 }
