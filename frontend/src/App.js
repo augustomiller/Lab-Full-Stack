@@ -20,12 +20,21 @@ export default function App() {
         });
     }, []);
 
-    function handleAddProject() {
+    async function handleAddProject() {
         /*
         * Conceito de imutabilidade: Copiando o valor de "projects", adicionando
         * novas informaçoes e alterando seu valor de uma forma indireta.
         */
-        setProjects([...projects, `Novo Projeto ${Date.now()}`]);
+        // setProjects([...projects, `Novo Projeto ${Date.now()}`]);
+
+        const response = await api.post('projects', {
+            title: `Novo Projeto ${Date.now()}`,
+            owner: "Maic Miller"
+        });
+
+        const project = response.data;
+
+        setProjects([...projects, project]);
     }
 
     return (
