@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
  * This devtool is neither made for production nor for readable output files.
@@ -195,12 +194,3 @@ eval("\n\nif (false) {} else {\n  module.exports = __webpack_require__(/*! ./cjs
 /******/ 	
 /******/ })()
 ;
-=======
-"use strict";
-
-var sum = function sum(a, b) {
-  return a + b;
-};
-
-console.log(sum(1, 3));
->>>>>>> Front-End
